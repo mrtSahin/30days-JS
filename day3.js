@@ -120,7 +120,7 @@ console.log(humanReadableDate)
 
 //isim 7 karakterden uzunsa ismin uzun kısa ise ismin kısa yazdır
 let isim="Murat"
-isim.length<7 ?console.log("İsmin kısa") : console.log("İsmin uzun")
+isim.length<7 ?console.log("İsmin kısa") : console.log("İsmin uzun.")
 
 
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <title>30DaysOfScript:Inline Script</title>
+    <script>
+        console.log("Bu benim ilk internal scriptim") /* scriptlerin body de tanımlı olması daha çok tercih ediliyor.
+         çünkü dom tree denen bişi var. eğer head de button u kullanmak istersen do tree nin hazır olup olmadığını
+          kontrol etmen gerekli. ama body de script yazarsan zaten body ye gelmeden 
+          önce tree hazır olduğundan kontrole gerek kalmıyor. ayeıca head de dom tree 
+          hazır olmadan butonu kullanmak istersen hata verecektir.*/
+          /*  önce head sonra body içerisindeki kodlar çalıştığından 
+          head içerisinde yazarsak sayfanın yüklenmesini yavaşlatacaktır*/
+          /* ayrıca head içerisine genelde css kodları yerleştirilir. çünkü eğer öyle yapmazsak
+          site stilsiz bir şekilde yükleniyor sonra stili geliyor. yani görsel güzelliği saylayan şeyler sonradan
+          yükleniyor. bu da çirkin bir görüntüye neden oluyor.*/
+    </script>
+  </head>
+  <body>
+    <button onclick="alert('Welcome to 30DaysOfJavaScript!')">Click Me</button>
+    <script>
+        console.log("Bu benim ilk internal scriptim. Ama body de tanımlı olanı")
+    </script>
+    <script src="./helloWorld.js">//yorum satırı: Birden fazla script çalıştırabiliriz</script>
+    <script src="./day3.js"></script>
+  </body>
+</html>

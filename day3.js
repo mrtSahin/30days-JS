@@ -1,17 +1,17 @@
 /**
  * Truthy values
-All numbers(positive and negative) are truthy except zero
-All strings are truthy except an empty string ('')
-The boolean true
+tüm sayılar(positive and negative)
+tüm stringler. boş string ('') hariç
+boolean true
 
 Falsy values
 0
-0n
 null
 undefined
 NaN
-the boolean false
-'', "", ``, empty string
+boolean false
+'', "", ``, boş string
+
  */
 
 let firstName
@@ -110,7 +110,7 @@ let days=[  //0. gün için pazar ı kabul ediyor
 
 let humanReadableDate=`${day} ${months[monthNumber]} ${year} ${days[dayNumber]} ${hour}:${minute<10 ?"0"+minute:minute}:${second<10 ?"0"+second:second}`
 console.log(humanReadableDate)
-
+ 
 
 //prompt ile dik kenar uzunlukları alınan üçgenin hipotenüsünü bulma
 // let height=prompt("1. kenar uzunluğunu giriniz")

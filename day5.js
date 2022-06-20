@@ -28,7 +28,7 @@ console.log(dizi5) // [empty x 8]   8 uzunluğunda içi boş array
 //dizi5.fill(78) // içinini 78 ile doldurur
 console.log(dizi5)  // [0, 0, 0, 0, 0, 0, 0, 0]
 // let dizi5= Array(8).fill(0)  // bu şekilde de tanımlayabliriz
-
+ 
 //.indexf() ile gönderdğimizin değerin dizi içerisindeki index ini alabiliriz.
 let dizi6=[1,1,4,6,7,9]
 console.log(dizi6.indexOf(6)) // 3

@@ -3,7 +3,7 @@
 // farklı yerlerde çalıştıracaksak fonksiyonları kullanabilir. bu sayede aynı 
 // kod bloğunu çok kere yazmaktansa bir kere yazıyoruz ve fonksiyon ile onu
 // çalıştırabiliyoruz
-
+ 
 //her fonksiyon sadece bir işlem yapmalıdır.
 
 // fonksiyon tanımlama

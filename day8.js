@@ -151,4 +151,4 @@ console.log(values)
 
 // bir özelliğin objede olup olmadığını kontrol etme
 console.log("bir özelliğin objede olup olmadığını kontrol etme")
-console.log(copyPerson.hasOwnProperty('name'))
+console.log(copyPerson.hasOwnProperty('name')) 

@@ -1,4 +1,4 @@
-
+ // karşılaştırma
 let yagmurlumu=true
 if(yagmurlumu){
     console.log("Şimsiye al")

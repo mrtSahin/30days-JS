@@ -8,7 +8,7 @@
 // for(başlangıç değeri; durma değeri; artırma-azalma){
 //     // code goes here
 // }
-
+ 
 
 for(let i = 0; i <= 5; i++){
     console.log(i)

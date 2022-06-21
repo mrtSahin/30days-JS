@@ -1,7 +1,6 @@
 
 
 console.log("bu yazı introduction.js den geldi")
- 
 console.log(typeof "Murat")
 console.log(typeof 5)
 console.log(typeof 8.89)

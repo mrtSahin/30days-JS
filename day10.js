@@ -104,7 +104,7 @@ console.log(mapOfPlakalar.has(58)) // true
 
 
 // destructur 
-// destruct işlemi ile bir dizi,liste,map... içerisindeki değerleri farklı değişkenlere atayabiliriz
+// destruct işlemi ile bir dizi,liste,map vs içerisindeki değerleri farklı değişkenlere atayabiliriz
 for (const [plaka, sehir] of mapOfPlakalar){ 
     console.log(plaka, sehir)
 }

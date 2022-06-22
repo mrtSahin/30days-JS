@@ -48,4 +48,4 @@ console.log(Math.max(...nums)) // 10
 // fonksiyonlarda da belirli bir parametreden sonrasını diziye alabilmek için kullanılır
 
 let numbes =[5,8,6,2,6,65,652,2,66,87,32]
-let [one,two,three,four,five,six,...rest]=numbes
+let [one,two,three,four,five,six,...rest]=numbes 

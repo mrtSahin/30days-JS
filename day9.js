@@ -168,6 +168,26 @@ console.log(numarlar.sort((a,b)=>b-a)) // büyükten küçüye
 console.log(products.sort((a,b)=>b.id-a.id)) // id ye göre büyükten küçüğe sıralar
 
 
+// en çok konuşulan 3 dili bulma
+const langs = [
+    ['German', 7],
+    ['Serbian', 4],
+    ['Chinese', 5],
+    ['Arabic', 25],
+    ['Portuguese', 9],
+    ['Russian', 9],
+    ['Dutch', 8],
+    ['English', 91],
+    ['Swahili', 4],
+    ['Spanish', 24],
+    ['French', 45]
+]
+
+const sortedLangs=langs.sort((a,b)=>b[1]-a[1])
+for(let i=0;i<=2;i++){
+    console.log(sortedLangs[i]) 
+}
+
 
 
 

@@ -214,6 +214,162 @@ console.log(ogretmen.getInsanBilgisi())
 
 
 
+class Animal {
+    constructor(name,age,color,legs){
+        this.name=name
+        this.age=age
+        this.color=color
+        this.legs=legs
+    }
+    get getName(){
+        return this.name
+    }
+    set setName(newName){
+        this.name=newName
+    }
+    run(){
+        console.log(`${this.name} is running`)
+    }
+    getInfo(){
+        return `${this.name} is an animal. It is ${this.age} and ${this.color}, It has ${this.legs} legs.`
+    }
+}
+
+class Dog extends Animal{
+    constructor(name,age,color,legs=4,collarNo){
+        super(name,age,color,legs)
+        this.collarNo=collarNo
+    }
+    get getCollarNo(){
+        return this.collarNo
+    }
+    set setCollarNo(newCollarNo){
+        this.collarNo=newCollarNo
+    }
+    havla(){
+        console.log("HAV hav")
+    }
+    getInfo(){ // override
+        return `${this.name} is a dog. It is ${this.age} and ${this.color}. It is collar no: ${this.collarNo}`
+    }
+}
+
+class Cat extends Animal{
+    constructor(name,age,color,legs=4,eyesColor){
+        super(name,age,color,legs)
+        this.eyesColor=eyesColor
+    }
+    get getEyeColor(){
+        return this.eyesColor
+    }
+    miyavla(){
+        console.log("MİYAVV")
+    }
+    getInfo(){ // override
+        return `${this.name} is a cat. It is ${this.age} and ${this.color}. It has ${this.eyesColor} eyes.`
+    }
+}
+
+const animal= new Animal("Patuk",5,"Black",6)
+const dog = new Dog("Haydar",6,"Orange",undefined,14253) // default değeri olan değişkene undefined gönderirsek default değeri alır
+const cat = new Cat("Cabbar",3,"White",undefined,"Green")
+
+console.log(cat.legs)
+console.log(dog.getInfo())
+console.log(cat.getInfo())
+cat.miyavla()
+dog.havla()
+console.log(dog.getCollarNo)
+console.log(cat.getEyeColor)
 
 
 
+
+
+
+class Statistics{
+    constructor(numbers){
+        this.numbers=numbers
+        this.sortedNumbers=numbers.sort((a,b)=>a-b)
+//  [24, 24, 25, 26, 26, 26, 26, 26, 27, 27, 27, 27, 29, 31, 31, 32, 32, 32, 33, 33, 34, 34, 37, 37, 38]
+    }
+    count(){
+        return `Count: ${this.numbers.length}`
+    }
+    sum(){
+        return `Sum: ${this.numbers.reduce((number,acc)=>acc+number)}`
+    }
+    min(){
+        return `Min: ${Math.min(...this.numbers)}` // spread
+    }
+    max(){
+        return `Max: ${Math.max(...this.numbers)}` // spread
+    }
+    range(){
+        let mxa=this.medindekiSayiyiVer(this.max())
+        let mni = this.medindekiSayiyiVer(this.min())
+        return `Range: ${mxa-mni}`// class içerisinde bir metodu başka metodda çağırabiliriz
+    }
+    mean(){ // aritmetik ortalama
+        let smu=this.medindekiSayiyiVer(this.sum())
+        let conut=this.medindekiSayiyiVer(this.count())
+        const men= parseFloat((smu/conut).toFixed(2))
+        return `Mean: ${men}`
+    }
+    median(){
+        let count= this.sortedNumbers.length
+        let med=0
+        if(0!=count%2){
+            count/=2
+            count=Math.ceil(count)
+            count-=1
+            let med=this.sortedNumbers[count]
+            return `Median: ${med}`
+        }else{
+            count/=2
+            count-=1
+            med=(this.sortedNumbers[count]+this.sortedNumbers[count+1])/2
+            return `Median: ${med}`
+        }
+    }
+    mode(){// dizide en çok geçen sayı
+        const setNumbers=new Set(this.numbers)
+        let num=[]
+        for(const setNum of setNumbers){
+            num.push(this.numbers.filter(number=>number==setNum))
+        }
+        num.sort((a,b)=>b.length-a.length)
+        return `Mode: (${num[0][0]},${num[0].length})`
+    }
+    var(){// varyans hesabı
+        let men= this.medindekiSayiyiVer(this.mean())
+        let temp=0
+        let variance=0
+        let conut=this.medindekiSayiyiVer(this.count())
+        this.numbers.forEach(number=>temp+=(number-men)**2)
+        variance=parseFloat((temp/conut-1).toFixed(2))
+        return `Variance: ${variance}`
+    }
+    std(){ // standart sapma
+        let variance = this.medindekiSayiyiVer(this.var())
+        let sd = Math.sqrt(variance).toFixed(2)
+        return `Standard Deviation: ${sd}`
+    }
+    medindekiSayiyiVer(metin){ // bir metodda başka bir metodun sonucundaki değeri kullanmak istediğimizde 
+        //metodlar birer metin döndürdüklerinden dolayı metindeki sayıları yakalamk için bu metodu kullanıyourz
+        return metin.match(/\d+.?\d+/)
+    }
+}
+
+ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
+const statistics= new Statistics(ages)
+console.log(statistics.count())
+console.log(statistics.sum())
+console.log(statistics.min())
+console.log(statistics.max())
+console.log(statistics.range())
+console.log(statistics.mean())
+console.log(statistics.median())
+console.log(statistics.mode())
+console.log(statistics.var())
+console.log(statistics.std())

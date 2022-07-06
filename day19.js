@@ -56,28 +56,38 @@ function personAccount(){
     }
 
     function totalExpense(){
-
+        return expense.reduce((acc,expense)=>acc+expense)
     }
 
     function accountInfo(){
+        return `${firstName} ${lastName} total incomes: ${totalIncome()} total expense: ${totalExpense()}`
+    }
+
+    function addIncome(...newIncome){
+        newIncome.forEach(inc=>{
+            this.incomes.push(inc)
+        })
+    }
+
+    function addExpense(...newExpense){
+        newExpense.forEach(exp=>{
+            this.expense.push(exp)
+        })
+    }
+
+    function accountsBalance(){ // bakiye bilgisi
 
     }
 
-    function addIncome(){
-
+    return{
+        accInfo: accountInfo(),
+        totalInc: totalIncome(),
+        totalExp: totalExpense(),
+        accBalance: accountsBalance()        
     }
-
-    function addExpense(){
-
-    }
-
-    function accountsBalance(){
-
-    }
-    return totalIncome()
 }
 
-console.log(personAccount())
+console.log(personAccount().accInfo)
 
 
 
